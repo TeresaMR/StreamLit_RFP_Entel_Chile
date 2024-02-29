@@ -1,0 +1,9 @@
+streamlit
+hugchat==0.0.8
+
+#sacado del whisperbot
+ibm-cos-sdk==2.13.2
+ibm-cos-sdk-core==2.13.2
+ibm-cos-sdk-s3transfer==2.13.2
+ibm-generative-ai==0.2.8
+ibm-watson-machine-learning==1.0.326
