@@ -1,6 +1,5 @@
 import streamlit as st
 ##from hugchat import hugchat
-
 # Import Langchain interface  and use base chain
 from watsonxga import WatsonxLangchainLLM
 from ibm_watson_machine_learning.foundation_models.utils.enums import ModelTypes
@@ -8,6 +7,7 @@ from ibm_watson_machine_learning.metanames import GenTextParamsMetaNames as GenP
 import ClientDiscoveryState as clientDiscoveryState
 import utilfunctions as utils
 import os
+
 #Configurations for webpage
 st.set_page_config(page_title="Procesador de RFP",page_icon="src/img/entel_icon.png")
 
@@ -69,21 +69,7 @@ if prompt:
 with st.sidebar:
     st.title('Índice del documento')
     with st.spinner("Pensando..."):
-          
-           prompt="Hazme un indice de temas del documento"
-           response = clientDiscoveryState.ClientDiscoveryState.on_button_click(clientDiscoveryState,prompt)
-           
-           st.divider()
-           responseLimpia1,response2=response.split("propuesta_test[93].docx",1)
-          # st.write()
-           i = 0 
-           res = responseLimpia1.split()
-           for valor in res:
-                
-                if "." in valor:
-                     proxima=res[i+1]
-                     st.write(valor+" "+ proxima)
-                     i+=2
+        st.write("hola")
                 
                      
            
@@ -92,15 +78,4 @@ with st.sidebar:
                 
          
           
-           
-
-            
-
-
-
-##########################################################################################
-
-# Display chat messages
-#for message in st.session_state.messages:
-  #  with st.chat_message(message["role"]):
-     #   st.write(message["content"])
+    

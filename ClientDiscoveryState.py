@@ -2,9 +2,8 @@ from watsonxga import WatsonxLangchainLLM
 from ibm_watson_machine_learning.foundation_models.utils.enums import ModelTypes
 from ibm_watson_machine_learning.metanames import GenTextParamsMetaNames as GenParams
 from prompt import ragprompt 
+from discoveryConcect import Discovery 
 import os
-
-
 
 ##LLM Response CLASS
 class ClientDiscoveryState():
@@ -12,8 +11,6 @@ class ClientDiscoveryState():
     chat_history: list[tuple[str, str]]
     store_created: bool = True
     file_name: str= "propuesta_test[92].docx"
-    background: str ="backgrund"
-    ideas: str ="new ideas "
     is_uploading: bool = True
     prompt: str 
     llm: WatsonxLangchainLLM
@@ -31,8 +28,8 @@ class ClientDiscoveryState():
 
     def run_prompt(self, prompt):
         self.question = prompt
-        #ClientDiscoveryState.answer(self)
-        prompt = ragprompt(self.question, "propuesta_test[92].docx")
+        
+        prompt = ragprompt(self.question, Discovery.callDiscDocument())
         print("usamos  ga")
 
         llm = WatsonxLangchainLLM(
@@ -56,7 +53,7 @@ class ClientDiscoveryState():
             ClientDiscoveryState.question=ClientDiscoveryState.prompt
             print("la pregunta es:   ")
             print(ClientDiscoveryState.question)
-            ClientDiscoveryState.run_prompt(self,pregunta)
+           # ClientDiscoveryState.run_prompt(self,pregunta)
             return ClientDiscoveryState.run_prompt(self,pregunta)
          
 
