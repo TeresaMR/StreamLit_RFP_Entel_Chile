@@ -9,7 +9,7 @@ from ibm_watson_machine_learning.foundation_models.extensions.langchain import W
 
 class WatsonxLangchainLLM(BaseModel): 
     
-    generate_params: dict = { GenParams.MAX_NEW_TOKENS: 35 }
+    generate_params: dict = { GenParams.MAX_NEW_TOKENS: 59349 }
 
     model_id: str = "ibm-mistralai/mixtral-8x7b-instruct-v01-q"
 
