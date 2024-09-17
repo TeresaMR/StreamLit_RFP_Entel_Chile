@@ -29,7 +29,7 @@ class ClientDiscoveryState():
     def run_prompt(self, prompt):
         self.question = prompt
         
-        prompt = ragprompt(self.question, Discovery.callDiscDocument())
+        prompt = ragprompt(self.question, Discovery.callDiscDocument(prompt))
         print("usamos  ga")
 
         llm = WatsonxLangchainLLM(
